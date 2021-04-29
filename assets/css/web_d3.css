@@ -1,0 +1,34 @@
+/*
+* @Author: Yue Wu
+* @Date:   2015-09-28 16:18:11
+* @Last Modified by:   Yue Wu
+* @Last Modified time: 2015-09-30 17:37:06
+*/
+
+html {
+  text-align: center;
+}
+body {
+  font-size: 14px;
+  font-family: "Hiragino Sans GB", "Lucida Grande", sans-serif;
+  color: #555;
+  background-color: #f9f9f9;
+}
+.content {
+  width: 1440px;
+  margin: 0px auto;
+}
+.province {
+  fill: #EFE;
+  stroke: #DDD;
+}
+.state {
+  fill: #EEE;
+  stroke: #DDD;
+}
+circle {
+  fill: #00F;
+}
+#origin {
+  fill: #FF0;
+}

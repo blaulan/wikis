@@ -49,7 +49,7 @@ import os
 import sys
 import subprocess
 process = subprocess.Popen(
-    [sys.executable, 'CmdLineOpt.py', '1'],
+    [sys.executable, 'CmdLine.py', '1'],
     stdout=open('logfile.log', 'a'),
     stderr=open('error.log', 'a'),
     preexec_fn=os.setpgrp
@@ -84,7 +84,7 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 @app.route("/api/v1/users")
 def list_users():
-  return "user example"
+    return "user example"
 ```
 
 - rename file to its `md5`:
@@ -111,6 +111,31 @@ def rename_all(filelist):
             rename_all([os.path.join(i, j) for j in os.listdir(i)])
         else:
             print(i)
+```
+
+- intersection of two list of ranges:
+```python
+# https://stackoverflow.com/a/40368603
+def intersections(a,b):
+    ranges = []
+    i = j = 0
+    while i < len(a) and j < len(b):
+        a_left, a_right = a[i]
+        b_left, b_right = b[j]
+        if a_right < b_right:
+            i += 1
+        else:
+            j += 1
+        if a_right >= b_left and b_right >= a_left:
+            end_pts = sorted([a_left, a_right, b_left, b_right])
+            middle = [end_pts[1], end_pts[2]]
+            ranges.append(middle)
+    ri = 0
+    while ri < len(ranges)-1:
+        if ranges[ri][1] == ranges[ri+1][0]:
+            ranges[ri:ri+2] = [[ranges[ri][0], ranges[ri+1][1]]]
+        ri += 1
+    return ranges
 ```
 
 ## References

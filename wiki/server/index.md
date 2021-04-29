@@ -5,8 +5,6 @@ nav_order: 4
 has_children: true
 ---
 
-# Server
-
 ## Ideas
 
 ### Shanghai Public Transit API

@@ -5,7 +5,7 @@ nav_order: 1
 title: Java Snippets
 author: Yue Wu <me@blaulan.com>
 created:  2016-01-09 00:00:00
-modified: 2020-08-27 20:25:05
+modified: 2021-04-28 16:36:39
 tags: [dev, work]
 ---
 
@@ -55,7 +55,7 @@ list.stream().sorted(base).forEach(a -> SOME_FUNCTION(a));
 
 ## Language Specific "Features"
 
-- `==` compares reference value, and [smaller long values are cached](https://stackoverflow.com/q/19485818):
+`==` compares reference value, and [smaller long values are cached](https://stackoverflow.com/q/19485818):
 ```java
 public static Long valueOf(long l) {
     final int offset = 128;
@@ -65,7 +65,10 @@ public static Long valueOf(long l) {
     return new Long(l);
 }
 ```
-When comparing `Long` type variables, always use `a.equals(b)` instead of `a==b`. The same logic also applies to `Integer` and `Double`.
+
+- When comparing non-primitive type variables, always use `a.equals(b)` instead of `a==b`
+- Always use **a unique id** as the last resort at the end of sorting function or comparator
+- Be cautious when looping over set, since order is not guaranteed
 
 ## Write Object as JSON File
 

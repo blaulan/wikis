@@ -26,13 +26,3 @@ you-get -I youtube-dl.txt
 @Author: Yue Wu <me@blaulan.com>
 @Date:   $today.format("yyyy-MM-dd HH:mm:ss")
 ```
-
-## find IP-Guard shell utilities
-
-- /Applications/.LSDHelper_CUI
-- /Applications/.LSDHelper.app
-
-```bash
-pluginkit -m | grep -v "com.apple"
-find / -name 'LSDHelper'
-```
