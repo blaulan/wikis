@@ -1,6 +1,6 @@
 title: Yet Another Wiki
 author: Yue Wu
-imgbase: "/assets/images"
+imgbase: "/wikis/assets/images"
 
 remote_theme: pmarsceill/just-the-docs
 color_scheme: light
